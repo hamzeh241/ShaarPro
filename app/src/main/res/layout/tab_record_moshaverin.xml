@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecordMoshaverin_Recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="ltr"/>
+
+    <Button
+        android:id="@+id/btn_Reload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Reload"
+        android:layout_centerInParent="true"
+        android:background="@drawable/change_color_btn"
+        android:textColor="@color/colorWhite"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/img_not_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/not_item" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@string/NotFoundData"
+            android:textColor="@color/colorBlue"
+            android:textSize="22sp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@string/NotDataToDataBase"
+            android:textColor="@color/colorBlue"
+            android:textSize="20sp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="HasNotPhoneNumber">کاربر هیچ شماره ای وارد نکرده است</string>
+    <string name="DeleteItem">آیا مایل به حذف می باشید</string>
+    <string name="PleaseAddLocation">حداقل یک لوکیشن انتخاب کنید</string>
+    <string name="Exit_ToApplication">آیا می خواهید از برنامه خارج شوید</string>
+    <string name="ThisFieldNotEmpty">این مورد باید پر شود</string>
+</resources>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorCenteral">
+
+        <RelativeLayout
+            android:id="@+id/backall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/EditLocationUser"
+                android:textColor="@color/colorWhite"
+                android:layout_toLeftOf="@id/BackIcon"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"/>
+
+            <ImageView
+                android:id="@+id/BackIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"/>
+
+    <Button
+        android:id="@+id/btn_Reload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/change_color_btn"
+        android:text="@string/Reload"
+        android:textColor="@color/colorWhite"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/img_not_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/not_item" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@string/NotFoundData"
+            android:textColor="@color/colorBlue"
+            android:textSize="22sp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@string/NotDataToDataBase"
+            android:textColor="@color/colorBlue"
+            android:textSize="20sp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_NewLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/change_color_btn"
+        android:text="@string/NewLocation"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"/>
+
+</RelativeLayout>

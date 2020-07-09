@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layoutDirection="rtl">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorCenteral">
+
+            <RelativeLayout
+                android:id="@+id/backall"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/BackIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_back" />
+
+                <TextView
+                    android:id="@+id/Back_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@id/BackIcon"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="@string/EditHome"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/Remove"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/remove"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/Fragment_Add_Home_lbl_Target"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Target"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        android:id="@+id/Fragment_Add_Home_RadioGroup_Target"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rdo_Sell"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:buttonTint="@color/colorBlue"
+                            android:text="@string/Sell"
+                            android:textSize="15sp" />
+
+                        <RadioButton
+                            android:id="@+id/rdo_Rent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/colorBlue"
+                            android:text="@string/Rent"
+                            android:textSize="15sp" />
+
+                    </RadioGroup>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:layout_marginTop="15dp"
+                        android:alpha="0.1"
+                        android:background="@color/colorBlack" />
+
+                    <TextView
+                        android:id="@+id/Fragment_Add_Home_lbl_KindOfHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/KindOfHome"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        android:id="@+id/Fragment_Add_Home_RadioGroup_KindOfHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rdo_Residential"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:buttonTint="@color/colorBlue"
+                            android:text="@string/Residential"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/rdo_Commercial"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:buttonTint="@color/colorBlue"
+                            android:text="@string/Commercial"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/rdo_Industrial"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/colorBlue"
+                            android:text="@string/Industrial"
+                            android:textSize="12sp" />
+
+                    </RadioGroup>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/Recycler_Type_PropertyHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp" />
+
+                    <TextView
+                        android:id="@+id/lbl_SpecificationsUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:textColor="@color/colorGray"
+                        android:textSize="17sp"/>
+
+                    <CheckBox
+                        android:id="@+id/chk_Special"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:background="@drawable/stroke_feature_child"
+                        android:buttonTint="@color/colorBlue"
+                        android:layoutDirection="ltr"
+                        android:text="@string/Special"
+                        android:textColor="@color/colorGray"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/Fragment_Add_Home_lbl_Location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/Location"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp" />
+
+                    <Spinner
+                        android:id="@+id/cmb_Location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:spinnerMode="dialog"/>
+
+                    <TextView
+                        android:id="@+id/lbl_TempLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/TempLocation"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp"
+                        />
+
+                    <Spinner
+                        android:id="@+id/cmb_TempLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:spinnerMode="dialog"/>
+
+                    <TextView
+                        android:id="@+id/Fragment_Add_Home_lbl_Property_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/Property_details"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/txt_AdTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/colorPaleBlack"
+                        android:hint="@string/AdTitle"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/txt_DiscriptionHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorPaleBlack"
+                        android:hint="@string/DiscriptionHome"
+                        android:inputType="textMultiLine"
+                        android:lines="4"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/lbl_CodePosty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/CodePosty"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/txt_CodePosty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/colorPaleBlack"
+                        android:hint="@string/CodePosty"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/lbl_Address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/Address"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/txt_Address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/colorPaleBlack"
+                        android:hint="@string/Address"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/lbl_Price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/Price"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/txt_Price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/colorPaleBlack"
+                        android:hint="@string/Price2"
+                        android:inputType="number"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/lbl_Rent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/Rent_Price"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/txt_Rent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/colorPaleBlack"
+                        android:hint="@string/Price2"
+                        android:inputType="number"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/lbl_Mortgage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/Mortgage"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/txt_Mortgage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/colorPaleBlack"
+                        android:hint="@string/Price2"
+                        android:inputType="number"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/Fragment_Add_Home_lbl_TheArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/TheArea"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/txt_TheArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/colorPaleBlack"
+                        android:hint="@string/TheArea"
+                        android:inputType="number"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/lbl_Year_of_construction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/Year_of_construction"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/AgeHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/lbl_CountRoom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/CountRoom"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/cmb_CountRoom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/Fragment_Add_Home_lbl_DiscriptionCall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/DiscriptionCall"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="10">
+
+                        <EditText
+                            android:id="@+id/txt_Mob"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:backgroundTint="@color/colorPaleBlack"
+                            android:hint="@string/Mobile"
+                            android:inputType="number"
+                            android:layoutDirection="ltr"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/lbl_Mobile"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:backgroundTint="@color/colorWhite"
+                            android:enabled="false"
+                            android:textDirection="ltr"
+                            android:text="+98"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="10">
+
+                        <EditText
+                            android:id="@+id/txt_Phone"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:backgroundTint="@color/colorPaleBlack"
+                            android:hint="@string/Phone"
+                            android:inputType="number"
+                            android:layoutDirection="ltr"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/lbl_Phone"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:backgroundTint="@color/colorWhite"
+                            android:enabled="false"
+                            android:textDirection="ltr"
+                            android:text="+98 87"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/Fragment_Add_Home_lbl_AddVideo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/AddVideo"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:orientation="horizontal"
+                        android:weightSum="10">
+
+                        <EditText
+                            android:id="@+id/txt_VideoLink"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="6"
+                            android:backgroundTint="@color/colorPaleBlack"
+                            android:hint="@string/VideoLink"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <Spinner
+                            android:id="@+id/Spinner_VideoLink"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/lbl_Property"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/Property"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+
+                    <RelativeLayout
+                        android:id="@+id/Property_Home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="#454545"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="5dp"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/left_property" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="@string/Added_Property"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/right_property" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/Fragment_Add_Home_lbl_HaveImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/HaveImage"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/add_img_Home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:src="@drawable/addimage" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_add_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="30dp"
+                        app:cardCornerRadius="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/btn_TourVisitor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:text="@string/TourVisitor"
+                                android:background="@drawable/change_color_btn"
+                                android:textColor="@color/colorWhite"/>
+
+                            <TextView
+                                android:id="@+id/lbl_TourVisitor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:paddingRight="10sp"
+                                android:singleLine="true"
+                                android:gravity="center_vertical"
+                                android:textSize="16sp"
+                                android:textColor="@color/colorBlack"/>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <Button
+                        android:id="@+id/btn_Record"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/change_color_btn"
+                        android:text="@string/Release"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        android:visibility="gone"/>
+
+                    <Button
+                        android:id="@+id/btn_Arshive"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/change_color_btn"
+                        android:text="@string/Arshive"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        android:visibility="gone"/>
+
+                    <Button
+                        android:id="@+id/btn_Expectation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/change_color_btn"
+                        android:text="@string/Expectation"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        android:visibility="gone"/>
+
+                    <Button
+                        android:id="@+id/btn_Call"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/colorWhite"
+                        android:text="@string/Call"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/btn_Edit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/change_color_btn"
+                        android:text="@string/Record_Changes"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>
